@@ -21,7 +21,12 @@ class SecondViewC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: "logged")
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC")
+        present(loginVC, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
